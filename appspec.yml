@@ -1,4 +1,25 @@
-files:
-  - source: /
-    destination: /var/www/www.ruchafarmhouse.com/html/
-    
+version: 0.0
+os: linux
+#files:
+#  - source: Config/config.txt
+#    destination: /webapps/Config
+#  - source: source
+#    destination: /webapps/myApp
+hooks:
+  BeforeInstall:
+    - location: Scripts/giftat-deployment.sh
+      timeout: 180
+#  ApplicationStop:
+#    - location: Scripts/stop-container.sh
+#      timeout: 180
+#  AfterInstall:
+#    - location: Scripts/pull-image.sh
+#    - location: Scripts/stop-container.sh
+#      timeout: 180
+#  ApplicationStart:
+#    - location: Scripts/start-container.sh
+#      timeout: 180
+#  ValidateService:
+#    - location: Scripts/validation.sh
+#      timeout: 180
+#      runas: root
